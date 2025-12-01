@@ -139,7 +139,7 @@ insert.sql
 Execute:  
   
 ```
-03_selects.sql
+selects.sql
 ```  
   
 ### ✔ Passo 5 – Atualizar / Excluir dados  
@@ -147,7 +147,7 @@ Execute:
 Execute:  
   
 ```
-04_updates_deletes.sql
+updates_deletes.sql
 ```  
   
 ---
