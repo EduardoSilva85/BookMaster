@@ -1,3 +1,6 @@
+--- CREATE TABLES FOR BOOKMASTER DATABASE ---
+
+-- table: Usuario
 CREATE TABLE Usuario (
   id_usuario INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(255) NOT NULL,
@@ -5,11 +8,13 @@ CREATE TABLE Usuario (
   endereco VARCHAR(255)
 );
 
+-- table: Idioma
 CREATE TABLE Idioma (
   id_idioma INT AUTO_INCREMENT PRIMARY KEY,
   nome_idioma VARCHAR(100) NOT NULL UNIQUE
 );
 
+-- table: Categoria
 CREATE TABLE Categoria (
   id_categoria INT AUTO_INCREMENT PRIMARY KEY,
   nome_categoria VARCHAR(255) NOT NULL,
@@ -18,6 +23,7 @@ CREATE TABLE Categoria (
   FOREIGN KEY (id_idioma) REFERENCES Idioma(id_idioma)
 );
 
+-- table: Livro
 CREATE TABLE Livro (
   id_livro INT AUTO_INCREMENT PRIMARY KEY,
   titulo VARCHAR(255) NOT NULL,
@@ -25,6 +31,7 @@ CREATE TABLE Livro (
   quantidade_estoque INT NOT NULL DEFAULT 0
 );
 
+-- table: Livro_Categoria
 CREATE TABLE Livro_Categoria (
   id_livro_categoria INT AUTO_INCREMENT PRIMARY KEY,
   id_livro INT NOT NULL,
@@ -36,6 +43,7 @@ CREATE TABLE Livro_Categoria (
   UNIQUE (id_livro, id_categoria)
 );
 
+-- table: Autor
 CREATE TABLE Autor (
   id_autor INT AUTO_INCREMENT PRIMARY KEY,
   nome_autor VARCHAR(255) NOT NULL,
@@ -43,6 +51,7 @@ CREATE TABLE Autor (
   data_nascimento DATE
 );
 
+-- table: Livro_Autor
 CREATE TABLE Livro_Autor (
   id_livro_autor INT AUTO_INCREMENT PRIMARY KEY,
   id_livro INT NOT NULL,
@@ -54,6 +63,7 @@ CREATE TABLE Livro_Autor (
   UNIQUE (id_livro, id_autor)
 );
 
+-- table: Emprestimo
 CREATE TABLE Emprestimo (
   id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
   id_livro INT NOT NULL,
