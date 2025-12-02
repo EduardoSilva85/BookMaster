@@ -150,6 +150,14 @@ Execute:
 updates_deletes.sql
 ```  
   
+Possivel erro code 1175:  
+
+O erro ERROR 1175: You are using safe update mode acontece porque o MySQL bloqueia UPDATE e DELETE sem uma condição considerada “segura”.  
+Ou seja, ele quer que você:  
+  
+- use a chave primária no WHERE;  
+- desative o “safe update mode”;  
+  
 ---
   
 # Testes Básicos de Validação  
